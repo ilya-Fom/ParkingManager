@@ -1,4 +1,5 @@
 #include <SFML/Network.hpp>
+#include <format>
 #include <iomanip>
 #include <iostream>
 #include <memory>
@@ -72,14 +73,12 @@ void handleClient(std::shared_ptr<sf::TcpSocket> client, ParkingLot& lot) {
         float cost = 0;
         float totalRevenue = 0;
         if (lot.ExitVehicle(number, cost, totalRevenue)) {
-          response = "OK COST " + std::to_string(round(cost)) + " REVENUE " +
-                     std::to_string(totalRevenue);
+          response = std::format("OK COST {:.0f} REVENUE {:.0f}", cost, totalRevenue);
         } else {
           response = "ERROR Vehicle " + number + " not found";
         }
       } else if (command == "STATUS") {
-        response = "STATUS free=" + std::to_string(lot.getFreeSpots()) +
-                   " revenue=" + std::to_string(lot.getRevenue());
+        response = std::format("STATUS free={} revenue={:.0f}", lot.getFreeSpots(), lot.getRevenue());
       } else if (command == "QUIT") {
         response = "OK BYE";
         client->send(response.c_str(), response.size());
