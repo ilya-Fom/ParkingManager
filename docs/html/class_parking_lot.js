@@ -2,7 +2,7 @@ var class_parking_lot =
 [
     [ "ParkingLot", "class_parking_lot.html#a3c8c7836f0256461a85f9d4b54039152", null ],
     [ "EnterVehicle", "class_parking_lot.html#a74f178f86c89d0919f0e8041699a786c", null ],
-    [ "ExitVehicle", "class_parking_lot.html#a64ac2276ef1bd27bfcd8485e143da9fa", null ],
+    [ "ExitVehicle", "class_parking_lot.html#a0a68c7020bb3797caf4bb386fa502f14", null ],
     [ "getFreeSpots", "class_parking_lot.html#ac61baae35511575045f8e6eaa3cb51d1", null ],
     [ "getRevenue", "class_parking_lot.html#a283762df2e1f8573cbd9a4b97b9c65e2", null ],
     [ "isParked", "class_parking_lot.html#a5e66ca78e236eccc4d0b41819c2bab63", null ],

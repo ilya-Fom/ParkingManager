@@ -133,8 +133,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a882dc3f2430edc604c7f1b14630e4190"><td class="mdescLeft">&#160;</td><td class="mdescRight">Загрузить карту мест из файла  <br /></td></tr>
 <tr class="memitem:a74f178f86c89d0919f0e8041699a786c" id="r_a74f178f86c89d0919f0e8041699a786c"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a74f178f86c89d0919f0e8041699a786c">EnterVehicle</a> (const std::string &amp;vehicleNumber, float vehicleSize, int &amp;SpotId)</td></tr>
 <tr class="memdesc:a74f178f86c89d0919f0e8041699a786c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обработка въезда машины  <br /></td></tr>
-<tr class="memitem:a64ac2276ef1bd27bfcd8485e143da9fa" id="r_a64ac2276ef1bd27bfcd8485e143da9fa"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a64ac2276ef1bd27bfcd8485e143da9fa">ExitVehicle</a> (const std::string &amp;vehicleNumber, float &amp;cost, float &amp;totalRevenue)</td></tr>
-<tr class="memdesc:a64ac2276ef1bd27bfcd8485e143da9fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обработка выезда машины  <br /></td></tr>
+<tr class="memitem:a0a68c7020bb3797caf4bb386fa502f14" id="r_a0a68c7020bb3797caf4bb386fa502f14"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a0a68c7020bb3797caf4bb386fa502f14">ExitVehicle</a> (const std::string &amp;vehicleNumber, float &amp;cost, float &amp;totalRevenue, double &amp;hours)</td></tr>
+<tr class="memdesc:a0a68c7020bb3797caf4bb386fa502f14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обработка выезда машины  <br /></td></tr>
 <tr class="memitem:ac61baae35511575045f8e6eaa3cb51d1" id="r_ac61baae35511575045f8e6eaa3cb51d1"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ac61baae35511575045f8e6eaa3cb51d1">getFreeSpots</a> () const</td></tr>
 <tr class="memdesc:ac61baae35511575045f8e6eaa3cb51d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получить количество свободных мест  <br /></td></tr>
 <tr class="memitem:a283762df2e1f8573cbd9a4b97b9c65e2" id="r_a283762df2e1f8573cbd9a4b97b9c65e2"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a283762df2e1f8573cbd9a4b97b9c65e2">getRevenue</a> () const</td></tr>
@@ -240,8 +240,8 @@ false если нет места или машина уже на парковк�
 
 </div>
 </div>
-<a id="a64ac2276ef1bd27bfcd8485e143da9fa" name="a64ac2276ef1bd27bfcd8485e143da9fa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a64ac2276ef1bd27bfcd8485e143da9fa">&#9670;&#160;</a></span>ExitVehicle()</h2>
+<a id="a0a68c7020bb3797caf4bb386fa502f14" name="a0a68c7020bb3797caf4bb386fa502f14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a68c7020bb3797caf4bb386fa502f14">&#9670;&#160;</a></span>ExitVehicle()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -259,7 +259,12 @@ false если нет места или машина уже на парковк�
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">float &amp;</td>          <td class="paramname"><span class="paramname"><em>totalRevenue</em></span>&#160;)</td>
+          <td class="paramtype">float &amp;</td>          <td class="paramname"><span class="paramname"><em>totalRevenue</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;</td>          <td class="paramname"><span class="paramname"><em>hours</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -270,6 +275,7 @@ false если нет места или машина уже на парковк�
     <tr><td class="paramname">vehicleNumber</td><td>Госномер машины </td></tr>
     <tr><td class="paramname">cost</td><td>[выходной] Стоимость парковки (рубли) </td></tr>
     <tr><td class="paramname">totalRevenue</td><td>[выходной] Общая выручка парковки после оплаты </td></tr>
+    <tr><td class="paramname">hours</td><td>[выходной] время простоя машины </td></tr>
   </table>
   </dd>
 </dl>
