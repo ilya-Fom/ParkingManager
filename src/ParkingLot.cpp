@@ -44,13 +44,13 @@ bool ParkingLot::EnterVehicle(const std::string& vehicleNumber,
 }
 
 bool ParkingLot::ExitVehicle(const std::string& vehicleNumber, float& cost,
-                             float& totalRevenue) {
+                             float& totalRevenue, double& hours) {
   std::lock_guard<std::mutex> lock(mtx);
   for (ParkingSpot& spot : Spots) {
     if (spot.isOccupied() == true && spot.getVehicleNumber() == vehicleNumber) {
       try {
-        double downtime = spot.leave();
-        cost = downtime * hourlyRate;
+        hours = spot.leave();
+        cost = static_cast<float>(hours * hourlyRate);
         revenue += cost;
         totalRevenue = revenue;
         return true;

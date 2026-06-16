@@ -62,6 +62,7 @@ class ParkingLot {
    * @param vehicleNumber Госномер машины
    * @param cost [выходной] Стоимость парковки (рубли)
    * @param totalRevenue [выходной] Общая выручка парковки после оплаты
+   * @param hours [выходной] время простоя машины
    * @return true если машина найдена и выезд успешен
    * @return false если машина не найдена
    *
@@ -73,7 +74,7 @@ class ParkingLot {
    * 5. Обновляет выручку и возвращает значения
    */
   bool ExitVehicle(const std::string& vehicleNumber, float& cost,
-                   float& totalRevenue);
+                   float& totalRevenue, double& hours);
 
   /**
    * @brief Получить количество свободных мест

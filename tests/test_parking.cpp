@@ -81,7 +81,8 @@ TEST_CASE("ParkingLot - multiple enters and exits") {
   CHECK(spotId == 3);
 
   float cost, revenue;
-  lot.ExitVehicle("A111AA", cost, revenue);
+  double hours;
+  lot.ExitVehicle("A111AA", cost, revenue,hours);
   CHECK(lot.getFreeSpots() == 1);
   CHECK(revenue == 100);
 
@@ -147,7 +148,8 @@ TEST_CASE("ParkingLot - cannot exit non-existent vehicle") {
   ParkingLot lot("test_config.txt", 100);
 
   float cost, revenue;
-  bool result = lot.ExitVehicle("NOTEXIST", cost, revenue);
+  double hours;
+  bool result = lot.ExitVehicle("NOTEXIST", cost, revenue,hours);
 
   CHECK(result == false);
   CHECK(lot.getRevenue() == 0.0f);
@@ -172,7 +174,8 @@ TEST_CASE("ParkingLot - mixed enter exit") {
   CHECK(lot.getFreeSpots() == 0);
 
   float cost, revenue;
-  lot.ExitVehicle("A2", cost, revenue);
+  double hours;
+  lot.ExitVehicle("A2", cost, revenue,hours);
   CHECK(lot.getFreeSpots() == 1);
 
   lot.EnterVehicle("A4", 1.0f, id1);

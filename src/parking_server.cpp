@@ -72,9 +72,10 @@ void handleClient(std::shared_ptr<sf::TcpSocket> client, ParkingLot& lot) {
 
         float cost = 0;
         float totalRevenue = 0;
-        if (lot.ExitVehicle(number, cost, totalRevenue)) {
+        double hours = 0;
+        if (lot.ExitVehicle(number, cost, totalRevenue,hours)) {
           response =
-              std::format("OK COST {:.0f} REVENUE {:.0f}", cost, totalRevenue);
+              std::format("OK TIME {:.0f}h COST {:.0f} REVENUE {:.0f}", hours, cost, totalRevenue);
         } else {
           response = "ERROR Vehicle " + number + " not found";
         }
