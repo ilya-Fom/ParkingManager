@@ -189,11 +189,11 @@ TEST_CASE("ParkingLot - thread safety") {
 
   for (int i = 0; i < 10; ++i) {
     threads.emplace_back([&, i]() {
-        int spotId;
-        std::string num = "CAR" + std::to_string(i);
-        if (lot.EnterVehicle(num, 1.0f, spotId)) {
-            successCount++;
-        }
+      int spotId;
+      std::string num = "CAR" + std::to_string(i);
+      if (lot.EnterVehicle(num, 1.0f, spotId)) {
+        successCount++;
+      }
     });
   }
 

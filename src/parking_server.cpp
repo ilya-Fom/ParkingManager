@@ -73,12 +73,14 @@ void handleClient(std::shared_ptr<sf::TcpSocket> client, ParkingLot& lot) {
         float cost = 0;
         float totalRevenue = 0;
         if (lot.ExitVehicle(number, cost, totalRevenue)) {
-          response = std::format("OK COST {:.0f} REVENUE {:.0f}", cost, totalRevenue);
+          response =
+              std::format("OK COST {:.0f} REVENUE {:.0f}", cost, totalRevenue);
         } else {
           response = "ERROR Vehicle " + number + " not found";
         }
       } else if (command == "STATUS") {
-        response = std::format("STATUS free={} revenue={:.0f}", lot.getFreeSpots(), lot.getRevenue());
+        response = std::format("STATUS free={} revenue={:.0f}",
+                               lot.getFreeSpots(), lot.getRevenue());
       } else if (command == "QUIT") {
         response = "OK BYE";
         client->send(response.c_str(), response.size());
